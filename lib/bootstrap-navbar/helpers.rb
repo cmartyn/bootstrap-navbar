@@ -23,7 +23,7 @@ module BootstrapNavbar::Helpers
   end
 
   def current_url_or_sub_url?(url)
-    return false if url == '#'
+    return false if url.start_with? '#'
     uri, current_uri = [url, current_url].map do |url|
       URI.parse(url)
     end
